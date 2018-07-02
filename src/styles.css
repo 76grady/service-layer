@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    margin: 3em;
+    background-color: #333;
+    color: antiquewhite;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    font-family: "source-sans-pro";
+    font-weight: 300;
+}
+
+a:visited {
+    color: antiquewhite;
+}
