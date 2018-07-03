@@ -9,6 +9,8 @@ import { Customer } from '../customer';
 })
 export class BetaComponent implements OnInit {
   @ViewChild('custSelect') custSelect: HTMLSelectElement;
+
+  // exposed data service methods
   get data(): string {
     return this.dataService.serviceData;
   }
@@ -18,7 +20,6 @@ export class BetaComponent implements OnInit {
   get customers(): Customer[] {
     return this.dataService.customers;
   }
-
   private deleteCustomer(name: string): void {
     return this.dataService.deleteCustomer(name);
   }
