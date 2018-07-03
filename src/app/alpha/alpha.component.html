@@ -2,6 +2,31 @@
   <h3 style="color:brown">Alpha Component</h3>
   <h4>The Data Is: {{ data }} </h4> 
   <input [(ngModel)] = data /> 
+
+  <table style='text-align: left; padding: 30px 0;'>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>State</th>
+        <th>Rep</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let cust of customers;'>
+        <td>{{ cust.name }}</td>
+        <td>{{ cust.state }}</td>
+        <td>{{ cust.representative }}</td>
+      </tr>
+    </tbody>
+
+    <div style="padding: 30px 0;">
+      <div><span style="display: inline-block; width: 90px;">Name:</span> <input [(ngModel)]="name" /> </div>
+      <div><span style="display: inline-block; width: 90px;">State:</span> <input [(ngModel)]="state" /> </div>
+      <div><span style="display: inline-block; width: 90px;">Rep:</span> <input [(ngModel)]="rep" /> </div>
+      <div style="padding: 10px 0;"><button style="border: none; border-radius: 3px; padding: 5px;" (click)="onBtnAdd()">Add Customer</button></div>
+    </div>
+
+  </table>
   <br><br> 
   <a [routerLink]="['/b']">Go to B</a> 
 </div> 

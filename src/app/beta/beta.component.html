@@ -3,5 +3,14 @@
     <h4>The Data Is: {{ data }} </h4> 
     <input [(ngModel)]='data' /> 
     <br><br> 
+    <select #custSelect>
+        <option *ngFor="let cust of customers" 
+                [value]="cust.name">
+            {{cust.name}} {{cust.representative}} {{cust.state}}
+        </option>
+    </select>
+    <br><br> 
+    <button (click)="btnClick()">Delete Row</button>
+    <br><br> 
     <a [routerLink]="['/a']">Go to A</a> 
 </div> 
