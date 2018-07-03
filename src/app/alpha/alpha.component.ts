@@ -15,13 +15,11 @@ export class AlphaComponent implements OnInit {
   get data(): string {
     return this.dataService.serviceData;
   }
-
-  get customers(): Customer[] {
-    return this.dataService.customers;
-  }
-
   set data(value: string) {
     this.dataService.serviceData = value;
+  }
+  get customers(): Customer[] {
+    return this.dataService.customers;
   }
 
   private addCustomer(customer: Customer) {

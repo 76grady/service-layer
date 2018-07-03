@@ -22,8 +22,6 @@ export class FakeHttpService {
   }
 
   deleteCustomer(name: string): void {
-    console.log(name);
     this.customers = this.customers.filter(cust => cust.name !== name);
-    console.log(this.customers);
   }
 }

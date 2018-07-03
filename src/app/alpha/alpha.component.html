@@ -3,7 +3,7 @@
   <h4>The Data Is: {{ data }} </h4> 
   <input [(ngModel)] = data /> 
 
-  <table style='text-align: left; padding: 30px 0;'>
+  <table style='text-align: left; padding: 30px 0 5px 0;'>
     <thead>
       <tr>
         <th>Name</th>
@@ -18,15 +18,15 @@
         <td>{{ cust.representative }}</td>
       </tr>
     </tbody>
-
-    <div style="padding: 30px 0;">
-      <div><span style="display: inline-block; width: 90px;">Name:</span> <input [(ngModel)]="name" /> </div>
-      <div><span style="display: inline-block; width: 90px;">State:</span> <input [(ngModel)]="state" /> </div>
-      <div><span style="display: inline-block; width: 90px;">Rep:</span> <input [(ngModel)]="rep" /> </div>
-      <div style="padding: 10px 0;"><button style="border: none; border-radius: 3px; padding: 5px;" (click)="onBtnAdd()">Add Customer</button></div>
-    </div>
-
   </table>
+  <div style="padding: 30px 0 0 0;">
+    <div><span style="display: inline-block; width: 90px;">Name:</span> <input [(ngModel)]="name" /> </div>
+    <div><span style="display: inline-block; width: 90px;">State:</span> <input [(ngModel)]="state" /> </div>
+    <div><span style="display: inline-block; width: 90px;">Rep:</span> <input [(ngModel)]="rep" /> </div>
+    <div style="padding: 10px 0;"><button style="border: none; border-radius: 3px; padding: 5px;" (click)="onBtnAdd()">Add Customer</button></div>
+  </div>
   <br><br> 
   <a [routerLink]="['/b']">Go to B</a> 
+  <br><br> 
+  <a [routerLink]="['/c']">Go to C</a> 
 </div> 
