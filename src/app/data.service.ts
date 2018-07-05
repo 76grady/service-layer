@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { FakeHttpService } from './fake-http.service';
 import { Customer } from 'src/app/customer';
+import { EventComponent } from './event.component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DataService extends EventComponent {
   serviceData: string;
   private _customers: Customer[];
 
-  constructor(private fakeHttpService: FakeHttpService) {}
+  constructor(private fakeHttpService: FakeHttpService) {
+    super();
+    this.componentName = 'Data Service';
+  }
 
   get customers(): Customer[] {
     if (!this._customers) {
