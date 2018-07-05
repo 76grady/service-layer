@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, forwardRef } from '@angular/core';
 import { DataService } from '../data.service';
 import { Customer } from '../customer';
 import { EventComponent } from '../event.component';
+import { FakeHttpServiceObservable } from '../fake-http-service-obserable';
 
 @Component({
   selector: 'app-beta',
@@ -28,9 +29,21 @@ export class BetaComponent extends EventComponent implements OnInit {
     return this.dataService.deleteCustomer(name);
   }
 
-  constructor(private dataService: DataService) { 
+  deleteCustomersResolved(result) {
+    console.warn(`Delete Customers Resolved: ${JSON.stringify(result)}`);
+    alert('Delete customer - Beta Notified');
+  }
+
+  addCustomerResolved(result) {
+    console.warn(`Add Customer Resolved: ${JSON.stringify(result)}`);
+    alert('Added customer - Beta Notified');
+  }
+
+  constructor(private dataService: DataService) {
     super();
     this.componentName = 'Beta';
+    this.dataService.addObserver(FakeHttpServiceObservable.deleteCustomer, this.deleteCustomersResolved);
+    this.dataService.addObserver(FakeHttpServiceObservable.addCustomers, this.addCustomerResolved);
   }
 
   btnClick(): void {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Customer } from '../customer';
+import { FakeHttpServiceObservable } from "../fake-http-service-obserable";
 
 @Component({
   selector: 'app-alpha',
@@ -28,7 +29,20 @@ export class AlphaComponent implements OnInit {
     this.dataService.addCustomer(customer);
   }
 
-  constructor(public dataService: DataService) { }
+  addCustomerResolved(result) {
+    console.warn(`Add Customer Resolved: ${JSON.stringify(result)}`);
+    alert('Added customer - Alpha Notified');
+  }
+
+  getCustomersResolved(result) {
+    console.warn(`Get Customers Resolved: ${JSON.stringify(result)}`);
+    alert('Get customer - Alpha Notified');
+  }
+
+  constructor(public dataService: DataService) {
+    this.dataService.addObserver(FakeHttpServiceObservable.addCustomers, this.addCustomerResolved);
+    this.dataService.addObserver(FakeHttpServiceObservable.getCustomers, this.getCustomersResolved);
+  }
 
   ngOnInit() {
     console.log('AlphaComponent.ngOnInit', this.customers);
