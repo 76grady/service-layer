@@ -1,8 +1,14 @@
 import { OnInit, OnChanges, OnDestroy, DoCheck, AfterContentInit,
     AfterContentChecked, AfterViewInit, AfterViewChecked } from '@angular/core';
 
-export class EventComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked,
-    AfterViewInit, AfterViewChecked, OnDestroy {
+export class EventComponent implements OnInit,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked,
+    OnDestroy {
     componentName: string;
 
     ngOnInit(): void {
