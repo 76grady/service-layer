@@ -13,24 +13,26 @@ export class DataService {
 
   get customers(): Customer[] {
     if (!this._customers) {
-      this.fakeHttpService.getCustomers().subscribe(res => {
-        this._customers = res;
+      this.fakeHttpService.getCustomers().subscribe(customers => {
+        this._customers = customers;
       });
     }
     return this._customers;
   }
 
   addCustomer(customer: Customer) {
-    this.fakeHttpService.addCustomers(customer);
-    this.fakeHttpService.getCustomers().subscribe(res => {
-      this._customers = res;
+    this.fakeHttpService.addCustomers(customer).subscribe(() => {
+      this.fakeHttpService.getCustomers().subscribe(customers => {
+        this._customers = customers;
+      });
     });
   }
 
   deleteCustomer(name: string) {
-    this.fakeHttpService.deleteCustomer(name);
-    this.fakeHttpService.getCustomers().subscribe(res => {
-      this._customers = res;
+    this.fakeHttpService.deleteCustomer(name).subscribe(() => {
+      this.fakeHttpService.getCustomers().subscribe(customers => {
+        this._customers = customers;
+      });
     });
   }
 }
