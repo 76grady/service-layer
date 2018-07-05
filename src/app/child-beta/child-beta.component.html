@@ -1,0 +1,11 @@
+<div style="border: 1px solid DeepSkyBlue; padding: 0 20px 20px 20px; color: DeepSkyBlue">
+<h4>Child Component of Beta </h4>
+<div>This is the ngModel data passed as an input directive: {{ stringData }}</div>
+<h4>Let's add a customer using the service method</h4>
+  <div style="padding: 0 0 0 0;">
+    <div><span style="display: inline-block; width: 90px;">Name:</span> <input [(ngModel)]="name" /> </div>
+    <div><span style="display: inline-block; width: 90px;">State:</span> <input [(ngModel)]="state" /> </div>
+    <div><span style="display: inline-block; width: 90px;">Rep:</span> <input [(ngModel)]="rep" /> </div>
+    <div style="padding: 10px 0;"><button style="border: none; border-radius: 3px; padding: 5px;" (click)="onBtnAdd()">Add Customer</button></div>
+  </div>
+</div>

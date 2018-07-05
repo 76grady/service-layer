@@ -25,7 +25,9 @@
     <div><span style="display: inline-block; width: 90px;">Rep:</span> <input [(ngModel)]="rep" /> </div>
     <div style="padding: 10px 0;"><button style="border: none; border-radius: 3px; padding: 5px;" (click)="onBtnAdd()">Add Customer</button></div>
   </div>
-  <br><br> 
+  <br>
+  <app-child-alpha [customers]='customers'></app-child-alpha>
+
   <a [routerLink]="['/b']">Go to B</a> 
   <br><br> 
   <a [routerLink]="['/c']">Go to C</a> 

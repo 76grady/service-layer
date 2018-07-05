@@ -9,7 +9,7 @@ import { Customer } from './customer';
   providedIn: 'root'
 })
 export class FakeHttpService {
-  private CALL_DELAY = 3000;
+  private CALL_DELAY = 0;
 
   // represents the server-side state
   private customers: Customer[][] = [[

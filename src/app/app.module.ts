@@ -8,6 +8,8 @@ import { BetaComponent } from './beta/beta.component';
 import { FormsModule } from '@angular/forms';
 import { OmegaComponent } from './omega/omega.component';
 import { NestedComponentComponent } from './nested-component/nested-component.component';
+import { ChildAlphaComponent } from './child-alpha/child-alpha.component';
+import { ChildBetaComponent } from './child-beta/child-beta.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { NestedComponentComponent } from './nested-component/nested-component.co
     AlphaComponent,
     BetaComponent,
     OmegaComponent,
-    NestedComponentComponent
+    NestedComponentComponent,
+    ChildAlphaComponent,
+    ChildBetaComponent
   ],
   imports: [
     BrowserModule,

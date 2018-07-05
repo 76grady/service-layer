@@ -1,0 +1,24 @@
+<div style="font-family: cronos-pro; color: SALMON; border: 1px solid SALMON; padding: 0 20px 20px 20px; margin: 0 0 20px 0;">
+  <h4>Child component of Alpha </h4>
+  <div>This array is an input property</div>
+  <table>
+    <thead style="text-align: left;" cellpadding="30px">
+      <tr>
+        <th>Name</th>
+        <th>State</th>
+        <th>Rep</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let cust of customers'>
+        <td>{{ cust.name }}</td>
+        <td>{{ cust.state }}</td>
+        <td>{{ cust.representative }}</td>
+        <td><button (click)="buttonDeleteClick(cust.name)">[X] (invoke service delete method)</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <div>Directly from the service: {{ stringData }}</div>
+</div>
