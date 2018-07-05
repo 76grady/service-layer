@@ -14,12 +14,15 @@ export class BetaComponent implements OnInit {
   get data(): string {
     return this.dataService.serviceData;
   }
+
   set data(value: string) {
     this.dataService.serviceData = value;
   }
+
   get customers(): Customer[] {
     return this.dataService.customers;
   }
+
   private deleteCustomer(name: string): void {
     return this.dataService.deleteCustomer(name);
   }
