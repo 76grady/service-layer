@@ -31,7 +31,7 @@ export class AlphaComponent implements OnInit {
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
-    console.log(this.customers);
+    console.log('AlphaComponent.ngOnInit', this.customers);
   }
 
   onBtnAdd() {
