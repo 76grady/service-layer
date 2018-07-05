@@ -19,7 +19,9 @@ export class FakeHttpService {
   constructor() { }
 
   getCustomers(): Observable<Customer[]> {
-    return of(this.customers).pipe(delay(this.CALL_DELAY), tap(() => console.log('get complete')));
+    return of(this.customers).pipe(delay(this.CALL_DELAY), tap(() => {
+      // to noisy for now console.log('get complete');
+    }));
   }
 
   addCustomers(customer: Customer) {
