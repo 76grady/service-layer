@@ -15,9 +15,11 @@ export class AlphaComponent implements OnInit {
   get data(): string {
     return this.dataService.serviceData;
   }
+
   set data(value: string) {
     this.dataService.serviceData = value;
   }
+
   get customers(): Customer[] {
     return this.dataService.customers;
   }
