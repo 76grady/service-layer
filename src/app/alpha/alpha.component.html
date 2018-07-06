@@ -2,7 +2,8 @@
   <h3 style="color:brown">Alpha Component</h3>
   <h4>The Data Is: {{ data }} </h4> 
   <input [(ngModel)] = data /> 
-
+  <br><br>
+  <button (click)="openModal()" >Open dialog with Child-Beta component</button>
   <table style='text-align: left; padding: 30px 0 5px 0;'>
     <thead>
       <tr>
@@ -23,7 +24,7 @@
     <div><span style="display: inline-block; width: 90px;">Name:</span> <input [(ngModel)]="name" /> </div>
     <div><span style="display: inline-block; width: 90px;">State:</span> <input [(ngModel)]="state" /> </div>
     <div><span style="display: inline-block; width: 90px;">Rep:</span> <input [(ngModel)]="rep" /> </div>
-    <div style="padding: 10px 0;"><button style="border: none; border-radius: 3px; padding: 5px;" (click)="onBtnAdd()">Add Customer</button></div>
+    <div style="padding: 10px 0;"><button (click)="onBtnAdd()">Add Customer</button></div>
   </div>
   <br>
   <app-child-alpha [customers]='customers'></app-child-alpha>
@@ -32,3 +33,13 @@
   <br><br> 
   <a [routerLink]="['/c']">Go to C</a> 
 </div> 
+
+<p-dialog [(visible)]="dialogVisible"  [contentStyle]="{'background-color': '#111'}">
+  <p-header style="background-color: #444">
+    App Child Beta 
+  </p-header>
+  <app-child-beta [stringData]="data"></app-child-beta>
+  <p-footer>
+    This is a footer. 
+  </p-footer>
+</p-dialog>

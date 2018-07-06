@@ -11,6 +11,8 @@ import { EventComponent } from '../event.component';
 export class BetaComponent extends EventComponent implements OnInit {
   @ViewChild('custSelect') custSelect: HTMLSelectElement;
 
+  dialogVisible: boolean;
+
   // exposed data service methods
   get data(): string {
     return this.dataService.serviceData;
@@ -35,6 +37,10 @@ export class BetaComponent extends EventComponent implements OnInit {
 
   btnClick(): void {
     this.deleteCustomer(this.custSelect.nativeElement.value);
+  }
+
+  openModal(): void {
+    this.dialogVisible = true;
   }
 
   ngOnInit() {

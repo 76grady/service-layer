@@ -13,3 +13,10 @@ html {
 a:visited {
     color: antiquewhite;
 }
+
+button {
+    border: none;
+    border-radius: 2px !important;
+    padding: 7px;
+    background-color: #ffeeee;
+}
