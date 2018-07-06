@@ -12,6 +12,8 @@ export class AlphaComponent implements OnInit {
   state: string;
   rep: string;
 
+  dialogVisible: boolean;
+
   get data(): string {
     return this.dataService.serviceData;
   }
@@ -36,6 +38,10 @@ export class AlphaComponent implements OnInit {
 
   onBtnAdd() {
     this.addCustomer(new Customer(this.name, this.state, this.rep));
+  }
+
+  openModal() {
+    this.dialogVisible = true;
   }
 
 }

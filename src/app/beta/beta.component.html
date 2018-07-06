@@ -3,15 +3,27 @@
     <h4>The Data Is: {{ data }} </h4> 
     <input [(ngModel)]='data' /> 
     <br><br> 
+    <button (click)="openModal()" >Open dialog with Child-Alpha component</button>
+    <br><br>
     <select #custSelect>
         <option *ngFor="let cust of customers" 
                 [value]="cust.name">
             {{cust.name}} {{cust.representative}} {{cust.state}}
         </option>
     </select>
-    <br><br> 
-    <button (click)="btnClick()">Delete Row</button>
+    <br>
+    <button (click)="btnClick()">Delete The Selected Item</button>
     <br>
     <app-child-beta [stringData]="data"></app-child-beta>
     <a [routerLink]="['/a']">Go to A</a> 
 </div> 
+
+<p-dialog [(visible)]="dialogVisible"  [contentStyle]="{'background-color': '#111'}">
+   <p-header style="background-color: #444">
+    App Child Alpha 
+   </p-header>
+        <app-child-alpha [customers]="customers" ></app-child-alpha>
+   <p-footer>
+    This is a footer. 
+   </p-footer>
+</p-dialog>
